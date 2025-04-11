@@ -112,7 +112,9 @@
         <div class="relative container text-center">
             <div class="grid md:grid-cols-1">
                 <p class="mb-0">
-                    Copyright &copy; 2024 {{ $siteConfigs["site_name"]->value ?? "Site Name" }} by
+                    Copyright &copy; 2025
+                    <span class="text-{{ $primary_color }}-400 font-semibold">{{ $siteConfigs["site_name"]->value ?? "Site Name" }}</span>
+                    by
                     <a href="{{ env("COPYRIGHT_URL", "Copyright URL") }}" target="_blank" class="text-{{ $primary_color }}-400 font-semibold">
                         {{ env("COPYRIGHT_NAME", "Copyright Name") }}
                     </a>
