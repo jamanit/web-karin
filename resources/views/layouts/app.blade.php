@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>{{ $siteConfigs["site_name"]->value ?? "Site Name" }}{{ isset($title) ? " - " . $title : "" }}</title>
-        <meta name="description" content="Tailwind CSS Web Hosting Template" />
-        <meta name="keywords" content="creative, modern, Tailwind CSS, multipurpose, clean, cloud hosting, creative hosting, dedicated hosting, email hosting, hosting, html5, modern, reseller hosting, sass, server hosting, service, shop, startup hosting, web hosting" />
-        <meta name="author" content="Shreethemes" />
-        <meta name="website" content="https://shreethemes.in" />
-        <meta name="email" content="support@shreethemes.in" />
+        <meta name="description" content="{{ $siteConfigs["about"]->value ?? "Description..." }}" />
+        <meta name="keywords" content="aplikasi tiket, pembelian tiket online, tiket event, sistem tiket digital, aplikasi event, tiket konser, tiket seminar, platform pemesanan tiket, event management, aplikasi premium, booking tiket online, tiket QR code, sistem reservasi, aplikasi tiket Indonesia" />
+        <meta name="author" content="{{ $siteConfigs["site_name"]->value ?? "Author" }}" />
+        <meta name="website" content="{{ $siteConfigs["website_url"]->value ?? "https://example.com" }}" />
+        <meta name="email" content="{{ $siteConfigs["email"]->value ?? "example@email.com" }}" />
         <meta name="version" content="1.0.0" />
 
         <!-- favicon -->
