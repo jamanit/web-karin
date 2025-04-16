@@ -31,7 +31,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h5>
-                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
                                             {{ $premium_application->title }}
                                         </a>
                                     </h5>
@@ -41,7 +41,7 @@
                                     @endif
 
                                     <div class="mt-4">
-                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank"
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}"
                                             class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full">
                                             View detail
                                             <i class="uil uil-arrow-right"></i>
