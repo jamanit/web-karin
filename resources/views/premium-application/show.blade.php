@@ -10,7 +10,7 @@
                 <div class="grid grid-cols-1 pb-8 text-center">
                     <h3 class="text-2xl leading-normal font-medium md:text-3xl md:leading-normal">Detail Premium Application</h3>
                     <ul class="tracking-[0.5px] mb-0 inline-block">
-                        <li class="inline-block text-[15px] font-medium duration-500 ease-in-out hover:text-sky-500"><a href="{{ url('/') }}">Beranda</a></li>
+                        <li class="inline-block text-[15px] font-medium duration-500 ease-in-out hover:text-sky-500"><a href="{{ url('/') }}">Home</a></li>
                         <li class="inline-block text-[15px] ltr:rotate-0 rtl:rotate-180"><i class="mdi mdi-chevron-right"></i></li>
                         <li class="inline-block text-[15px] font-medium duration-500 ease-in-out hover:text-sky-500"><a href="{{ route('premium_applications.index') }}">Premium Applications</a></li>
                         <li class="inline-block text-[15px] ltr:rotate-0 rtl:rotate-180"><i class="mdi mdi-chevron-right"></i></li>
