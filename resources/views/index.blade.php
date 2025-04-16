@@ -1,29 +1,29 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
-@section("content")
+@section('content')
     <div>
         <section class="from-{{ $primary_color }}-700 to-{{ $primary_color }}-600 relative min-h-screen bg-gradient-to-br py-20 lg:py-24">
-            @if ($siteConfigs["banner"]->file)
-                <div class="absolute inset-0 bg-[url('{{ Storage::url($siteConfigs["banner"]->file) }}')] bg-cover bg-center opacity-50"></div>
+            @if ($siteConfigs['banner']->file)
+                <div class="absolute inset-0 bg-[url('{{ Storage::url($siteConfigs['banner']->file) }}')] bg-cover bg-center opacity-50"></div>
             @else
-                <div class="absolute inset-0 bg-[url('{{ asset("/") }}assets/hoxia-v1/images/bg/shape-1.png')] bg-cover bg-center opacity-50"></div>
+                <div class="absolute inset-0 bg-[url('{{ asset('/') }}assets/hoxia-v1/images/bg/shape-1.png')] bg-cover bg-center opacity-50"></div>
             @endif
             <div class="relative container">
                 <div class="mt-10 grid grid-cols-1 items-center gap-[30px] md:grid-cols-12">
                     <div class="md:col-span-8">
                         <div class="me-6">
                             <h4 class="text-3xl leading-normal font-semibold text-white lg:text-5xl lg:leading-normal">
-                                {!! $siteConfigs["title_banner"]->value ?? "" !!}
+                                {!! $siteConfigs['title_banner']->value ?? '' !!}
                             </h4>
                             <div class="mt-5 max-w-xl text-lg text-white/70">
-                                {!! $siteConfigs["caption_banner"]->value ?? "" !!}
+                                {!! $siteConfigs['caption_banner']->value ?? '' !!}
                             </div>
                         </div>
                     </div>
 
                     <div class="md:col-span-4">
-                        @if ($siteConfigs["hero_banner"]->file)
-                            <img loading="lazy" src="{{ Storage::url($siteConfigs["hero_banner"]->file) }}" alt="" />
+                        @if ($siteConfigs['hero_banner']->file)
+                            <img loading="lazy" src="{{ Storage::url($siteConfigs['hero_banner']->file) }}" alt="" />
                         @endif
                     </div>
                 </div>
@@ -60,26 +60,23 @@
                                     @if ($premium_application->image)
                                         <img loading="lazy" src="{{ Storage::url($premium_application->image) }}" alt="Image" class="h-[200px] object-cover" />
                                     @else
-                                        <img loading="lazy" src="{{ asset("assets/images/default-image.jpg") }}" alt="Image" class="h-[200px] object-cover" />
+                                        <img loading="lazy" src="{{ asset('assets/images/default-image.jpg') }}" alt="Image" class="h-[200px] object-cover" />
                                     @endif
                                 </div>
                                 <div class="p-6">
                                     <h5>
-                                        <a href="{{ route("premium_applications.show", $premium_application->id) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-lg font-medium duration-500">
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
                                             {{ $premium_application->title }}
                                         </a>
                                     </h5>
 
                                     @if ($premium_application->price)
-                                        <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ",", ".") }}</p>
+                                        <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                     @endif
 
                                     <div class="mt-4">
-                                        <a
-                                            href="{{ route("premium_applications.show", $premium_application->id) }}"
-                                            target="_blank"
-                                            class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full"
-                                        >
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank"
+                                            class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full">
                                             View detail
                                             <i class="uil uil-arrow-right"></i>
                                         </a>
@@ -90,10 +87,8 @@
                     </div>
 
                     <div class="itens-center mt-6 flex justify-center">
-                        <a
-                            href="{{ route("premium_applications.index") }}"
-                            class="bg-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-600 border-{{ $primary_color }}-500 hover:border-{{ $primary_color }}-600 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-block rounded-md border px-8 py-2.5 text-center align-middle text-[16px] font-medium tracking-wide text-white transition-all duration-500 focus:ring-[3px] focus:outline-none"
-                        >
+                        <a href="{{ route('premium_applications.index') }}"
+                            class="bg-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-600 border-{{ $primary_color }}-500 hover:border-{{ $primary_color }}-600 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-block rounded-md border px-8 py-2.5 text-center align-middle text-[16px] font-medium tracking-wide text-white transition-all duration-500 focus:ring-[3px] focus:outline-none">
                             View all premium applications
                         </a>
                     </div>
@@ -102,7 +97,7 @@
 
             {{-- TESTIMONIAL --}}
             <div id="testimonials" class="relative container scroll-mt-4 bg-gray-100 pt-16 pb-8 md:pt-24 md:pb-12 dark:bg-slate-900">
-                <div class="absolute inset-0 bg-[url('{{ asset("/") }}assets/hoxia-v1/images/map.png')] bg-cover bg-center bg-no-repeat opacity-25 dark:opacity-50"></div>
+                <div class="absolute inset-0 bg-[url('{{ asset('/') }}assets/hoxia-v1/images/map.png')] bg-cover bg-center bg-no-repeat opacity-25 dark:opacity-50"></div>
                 <div class="relative z-1 grid grid-cols-1 pb-8 text-center">
                     <h3 class="mb-4 text-2xl leading-normal font-medium md:text-3xl md:leading-normal">Testimonials</h3>
                     <p class="mx-auto max-w-xl text-slate-400">Cerita dari mereka yang telah menggunakan layanan kami.</p>
@@ -150,7 +145,7 @@
             </div>
 
             {{-- CONTACT US --}}
-            @include("contact-us")
+            @include('contact-us')
 
             {{-- ABOUT US --}}
             <div id="about_us" class="relative container scroll-mt-4 bg-gray-100 pt-16 pb-8 md:pt-24 md:pb-12 dark:bg-slate-900">
@@ -159,17 +154,15 @@
                 </div>
 
                 <div class="mx-auto text-slate-400">
-                    {!! $siteConfigs["about_us"]->value ?? "" !!}
+                    {!! $siteConfigs['about_us']->value ?? '' !!}
                 </div>
             </div>
         </section>
     </div>
 @endsection
 
-@push("styles")
-    
+@push('styles')
 @endpush
 
-@push("scripts")
-    
+@push('scripts')
 @endpush

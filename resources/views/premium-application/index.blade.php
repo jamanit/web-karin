@@ -1,6 +1,6 @@
-@extends("layouts.app")
+@extends('layouts.app')
 
-@section("content")
+@section('content')
     <div>
         <div class="from-{{ $primary_color }}-700 to-{{ $primary_color }}-600 relative bg-gradient-to-br py-[2.3rem]"></div>
 
@@ -26,26 +26,23 @@
                                     @if ($premium_application->image)
                                         <img loading="lazy" src="{{ Storage::url($premium_application->image) }}" alt="Image" class="h-[200px] object-cover" />
                                     @else
-                                        <img loading="lazy" src="{{ asset("assets/images/default-image.jpg") }}" alt="Image" class="h-[200px] object-cover" />
+                                        <img loading="lazy" src="{{ asset('assets/images/default-image.jpg') }}" alt="Image" class="h-[200px] object-cover" />
                                     @endif
                                 </div>
                                 <div class="p-6">
                                     <h5>
-                                        <a href="{{ route("premium_applications.show", $premium_application->id) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-lg font-medium duration-500">
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
                                             {{ $premium_application->title }}
                                         </a>
                                     </h5>
 
                                     @if ($premium_application->price)
-                                        <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ",", ".") }}</p>
+                                        <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                     @endif
 
                                     <div class="mt-4">
-                                        <a
-                                            href="{{ route("premium_applications.show", $premium_application->id) }}"
-                                            target="_blank"
-                                            class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full"
-                                        >
+                                        <a href="{{ route('premium_applications.show', $premium_application->id) }}" target="_blank"
+                                            class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full">
                                             View detail
                                             <i class="uil uil-arrow-right"></i>
                                         </a>
@@ -56,16 +53,14 @@
                     </div>
                 @endif
 
-                {{ $premium_applications->links("vendor.pagination.custom") }}
+                {{ $premium_applications->links('vendor.pagination.custom') }}
             </div>
         </section>
     </div>
 @endsection
 
-@push("styles")
-    
+@push('styles')
 @endpush
 
-@push("scripts")
-    
+@push('scripts')
 @endpush
