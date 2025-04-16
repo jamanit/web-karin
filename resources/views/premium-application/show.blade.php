@@ -56,7 +56,7 @@
                                     @if ($siteConfigs['whatsapp_number']->value)
                                         <li class="inline">
                                             <a href="https://wa.me/{{ $siteConfigs['whatsapp_number']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-whatsapp align-middle" title="{{ $siteConfigs['whatsapp_number']->name }}"></i>
                                             </a>
                                         </li>
@@ -65,7 +65,7 @@
                                     @if ($siteConfigs['phone_number']->value)
                                         <li class="inline">
                                             <a href="tel:{{ $siteConfigs['phone_number']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-phone align-middle" title="{{ $siteConfigs['phone_number']->name }}"></i>
                                             </a>
                                         </li>
@@ -74,7 +74,7 @@
                                     @if ($siteConfigs['email']->value)
                                         <li class="inline">
                                             <a href="mailto:{{ $siteConfigs['email']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-envelope align-middle" title="{{ $siteConfigs['email']->name }}"></i>
                                             </a>
                                         </li>
@@ -83,7 +83,7 @@
                                     @if ($siteConfigs['instagram_url']->value)
                                         <li class="inline">
                                             <a href="{{ $siteConfigs['instagram_url']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-instagram align-middle" title="{{ $siteConfigs['instagram_url']->name }}"></i>
                                             </a>
                                         </li>
@@ -92,7 +92,7 @@
                                     @if ($siteConfigs['facebook_url']->value)
                                         <li class="inline">
                                             <a href="{{ $siteConfigs['facebook_url']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-facebook-f align-middle" title="{{ $siteConfigs['facebook_url']->name }}"></i>
                                             </a>
                                         </li>
@@ -101,7 +101,7 @@
                                     @if ($siteConfigs['tiktok_url']->value)
                                         <li class="inline">
                                             <a href="{{ $siteConfigs['tiktok_url']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="fa-brands fa-tiktok align-middle text-sm" title="{{ $siteConfigs['tiktok_url']->name }}"></i>
                                             </a>
                                         </li>
@@ -110,7 +110,7 @@
                                     @if ($siteConfigs['map_url']->value)
                                         <li class="inline">
                                             <a href="{{ $siteConfigs['map_url']->value }}" target="_blank"
-                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-10 w-10 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-xl tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
                                                 <i class="uil uil-map-marker align-middle" title="{{ $siteConfigs['map_url']->name }}"></i>
                                             </a>
                                         </li>
