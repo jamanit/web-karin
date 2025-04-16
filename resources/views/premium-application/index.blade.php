@@ -41,7 +41,7 @@
                                     </h5>
 
                                     @if ($premium_application->price)
-                                        <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
+                                        <p class="text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                     @endif
 
                                     <div class="mt-4">

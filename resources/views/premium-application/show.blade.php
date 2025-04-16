@@ -18,11 +18,109 @@
                     </ul>
                 </div>
 
-                @if ($premium_applications->isEmpty())
-                    <p class="mx-auto max-w-xl text-center text-slate-400">Data is not yet available.</p>
-                @else
-                    <div class="grid grid-cols-2 gap-[30px] md:grid-cols-3 lg:grid-cols-4">
-                        <div class="grid grid-cols-2 gap-[30px] md:grid-cols-3 lg:grid-cols-4">
+
+
+                <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2">
+                    <div class="container2">
+                        <div class="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+
+                            <div class="flex items-center justify-center bg-slate-200 dark:bg-slate-800">
+                                @if ($premium_application->image)
+                                    <img loading="lazy" src="{{ Storage::url($premium_application->image) }}" alt="Image" class="h-[350px] object-cover" />
+                                @else
+                                    <img loading="lazy" src="{{ asset('assets/images/default-image.jpg') }}" alt="Image" class="h-[350px] object-cover" />
+                                @endif
+                            </div>
+
+                            <div class="p-6">
+                                <h5>
+                                    <a href="{{ route('premium_applications.show', $premium_application->id) }}" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
+                                        {{ $premium_application->title }}
+                                    </a>
+                                </h5>
+
+                                @if ($premium_application->price)
+                                    <p class="text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
+                                @endif
+
+                                <div class="mt-4 text-slate-400">{!! $premium_application->description !!}</div>
+                            </div>
+
+                            <div class="p-6 lg:flex lg:items-center lg:justify-between w-full">
+                                <p class="text-lg font-semibold">Pesan sekarang:
+                                <p>
+                                <ul class="list-none">
+                                    @if ($siteConfigs['whatsapp_number']->value)
+                                        <li class="inline">
+                                            <a href="https://wa.me/{{ $siteConfigs['whatsapp_number']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-whatsapp align-middle" title="{{ $siteConfigs['whatsapp_number']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['phone_number']->value)
+                                        <li class="inline">
+                                            <a href="tel:{{ $siteConfigs['phone_number']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-phone align-middle" title="{{ $siteConfigs['phone_number']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['email']->value)
+                                        <li class="inline">
+                                            <a href="mailto:{{ $siteConfigs['email']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-envelope align-middle" title="{{ $siteConfigs['email']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['instagram_url']->value)
+                                        <li class="inline">
+                                            <a href="{{ $siteConfigs['instagram_url']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-instagram align-middle" title="{{ $siteConfigs['instagram_url']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['facebook_url']->value)
+                                        <li class="inline">
+                                            <a href="{{ $siteConfigs['facebook_url']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-facebook-f align-middle" title="{{ $siteConfigs['facebook_url']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['tiktok_url']->value)
+                                        <li class="inline">
+                                            <a href="{{ $siteConfigs['tiktok_url']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="fa-brands fa-tiktok align-middle text-sm" title="{{ $siteConfigs['tiktok_url']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+
+                                    @if ($siteConfigs['map_url']->value)
+                                        <li class="inline">
+                                            <a href="{{ $siteConfigs['map_url']->value }}" target="_blank"
+                                                class="hover:border-{{ $primary_color }}-500 dark:hover:border-{{ $primary_color }}-500 hover:bg-{{ $primary_color }}-500 dark:hover:bg-{{ $primary_color }}-500 focus:ring-{{ $primary_color }}-500 focus:ring-opacity-25 inline-flex h-8 w-8 items-center justify-center rounded-md border border-gray-800 text-center align-middle text-base tracking-wide transition duration-500 ease-in-out focus:ring-[3px] focus:outline-none">
+                                                <i class="uil uil-map-marker align-middle" title="{{ $siteConfigs['map_url']->name }}"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if ($premium_applications->isEmpty())
+                        <p class="mx-auto max-w-xl text-center text-slate-400">Data is not yet available.</p>
+                    @else
+                        <div class="grid grid-cols-2 gap-[30px] md:grid-cols-2">
                             @foreach ($premium_applications as $premium_application)
                                 <div class="group relative overflow-hidden rounded-md shadow transition duration-500 hover:shadow-md dark:bg-slate-800 dark:shadow-gray-800">
                                     @if ($premium_application->discount)
@@ -38,17 +136,17 @@
                                     </div>
                                     <div class="p-6">
                                         <h5>
-                                            <a href="{{ route('premium_applications.show', $premium_application->parameter) }}" target="_blank" class="title hover:text-{{ $primary_color }}-500 text-lg font-medium duration-500">
+                                            <a href="{{ route('premium_applications.show', $premium_application->id) }}" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
                                                 {{ $premium_application->title }}
                                             </a>
                                         </h5>
 
                                         @if ($premium_application->price)
-                                            <p class="mt-2 text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
+                                            <p class="text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                         @endif
 
                                         <div class="mt-4">
-                                            <a href="{{ route('premium_applications.show', $premium_application->parameter) }}" target="_blank"
+                                            <a href="{{ route('premium_applications.show', $premium_application->id) }}"
                                                 class="text-{{ $primary_color }}-500 hover:text-{{ $primary_color }}-500 after:bg-{{ $primary_color }}-500 relative inline-block border-none text-center align-middle text-base tracking-wide duration-500 ease-in-out after:absolute after:start-0 after:end-0 after:bottom-0 after:h-px after:w-0 after:transition-all after:duration-500 after:content-[''] hover:after:end-auto hover:after:w-full">
                                                 View detail
                                                 <i class="uil uil-arrow-right"></i>
@@ -58,8 +156,8 @@
                                 </div>
                             @endforeach
                         </div>
-                    </div>
-                @endif
+                    @endif
+                </div>
             </div>
         </section>
     </div>
