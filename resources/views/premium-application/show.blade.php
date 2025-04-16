@@ -36,14 +36,12 @@
                             </div>
 
                             <div class="p-6">
-                                <h5>
-                                    <a href="{{ route('premium_applications.show', $premium_application->id) }}" class="title hover:text-{{ $primary_color }}-500 text-base md:text-lg font-medium duration-500">
-                                        {{ $premium_application->title }}
-                                    </a>
+                                <h5 class="title text-xl md:text-2xl font-semibold duration-500">
+                                    {{ $premium_application->title }}
                                 </h5>
 
                                 @if ($premium_application->price)
-                                    <p class="text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
+                                    <p class="text-xl font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                 @endif
 
                                 @if ($premium_application->description)
