@@ -14,7 +14,6 @@
                         <li class="inline-block text-[15px] ltr:rotate-0 rtl:rotate-180"><i class="mdi mdi-chevron-right"></i></li>
                         <li class="inline-block text-[15px] font-medium duration-500 ease-in-out text-sky-500">Premium Applications</li>
                     </ul>
-                    <p class="mx-auto max-w-xl text-slate-400">Rasakan pengalaman dengan aplikasi premium yang dirancang untuk memberikan performa terbaik dan fitur eksklusif.</p>
                 </div>
 
                 @if ($premium_applications->isEmpty())
