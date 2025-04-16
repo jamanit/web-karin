@@ -35,7 +35,7 @@
 
 <body class="font-inter text-base text-slate-900 dark:bg-slate-900 dark:text-white">
     <!-- Loader Start -->
-    {{-- <div id="preloader">
+    <div id="preloader">
         <div id="status">
             <div class="logo !mr-0">
                 @if ($siteConfigs['favicon']->file)
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div> --}}
+    </div>
     <!-- Loader End -->
 
     <!-- Tagline Start -->
