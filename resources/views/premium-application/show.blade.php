@@ -23,6 +23,9 @@
                 <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2">
                     <div class="container2">
                         <div class="relative overflow-hidden rounded-md shadow dark:shadow-gray-800">
+                            @if ($premium_application->discount)
+                                <div class="absolute top-2 right-0 rounded-l-lg bg-red-500 px-4 py-2 text-base font-semibold text-white">{{ $premium_application->discount }}</div>
+                            @endif
 
                             <div class="flex items-center justify-center bg-slate-200 dark:bg-slate-800">
                                 @if ($premium_application->image)
@@ -43,7 +46,9 @@
                                     <p class="text-lg font-semibold">Rp. {{ number_format($premium_application->price, 0, ',', '.') }}</p>
                                 @endif
 
-                                <div class="mt-4 text-slate-400">{!! $premium_application->description !!}</div>
+                                @if ($premium_application->description)
+                                    <div class="mt-4 text-slate-400">{!! $premium_application->description !!}</div>
+                                @endif
                             </div>
 
                             <div class="p-6 lg:flex lg:items-center lg:justify-between w-full">
