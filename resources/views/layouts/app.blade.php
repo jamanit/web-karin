@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ $siteConfigs['site_name']->value ?? 'Site Name' }}{{ isset($title) ? ' - ' . $title : '' }}</title>
-    <meta name="description" content="{{ $siteConfigs['about_us']->value ?? 'Description...' }}" />
+    <meta name="description" content="{!! $siteConfigs['about_us']->value ?? 'Description...' !!}" />
     <meta name="keywords" content="aplikasi tiket, pembelian tiket online, tiket event, sistem tiket digital, aplikasi event, tiket konser, tiket seminar, platform pemesanan tiket, event management, aplikasi premium, booking tiket online, tiket QR code, sistem reservasi, aplikasi tiket Indonesia" />
     <meta name="author" content="{{ $siteConfigs['site_name']->value ?? 'Author' }}" />
     <meta name="website" content="{{ $siteConfigs['website_url']->value ?? 'https://example.com' }}" />
