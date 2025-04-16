@@ -84,7 +84,7 @@ class SiteConfigSeeder extends Seeder
                 'name'  => 'Title Banner',
                 'key'   => 'title_banner',
                 'type'  => 'textarea',
-                'value' => '<p>Selamat Datang di Website</p><p>Karin</p>',
+                'value' => '<p>Selamat Datang di Website Karin</p>',
             ],
             [
                 'name'  => 'Caption Banner',
