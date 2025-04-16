@@ -54,7 +54,7 @@ class PremiumApplicationResource extends Resource
                     ->maxLength(255),
                 TextInput::make('price')
                     ->label('Price')
-                    ->required()
+                    ->nullable()
                     ->numeric()
                     ->maxLength(255),
                 TextInput::make('discount')
