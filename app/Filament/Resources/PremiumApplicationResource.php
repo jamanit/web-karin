@@ -66,7 +66,7 @@ class PremiumApplicationResource extends Resource
                     ->label('Description')
                     ->nullable()
                     ->string()
-                    ->maxLength(500)
+                    ->maxLength(5000)
                     ->columnSpan('full')
                     ->toolbarButtons([
                         'bold',
