@@ -198,7 +198,7 @@ class PremiumApplicationSeeder extends Seeder
         ];
 
         foreach ($data as $item) {
-            \App\Models\PremiumApplication::updateOrCreate(['title' => $item['title']], $item);
+            \App\Models\PremiumApplication::updateOrCreate(['title' => $item['title'], 'price' => $item['price']], $item);
         }
     }
 }
