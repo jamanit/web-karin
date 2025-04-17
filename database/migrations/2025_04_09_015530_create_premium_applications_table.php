@@ -16,9 +16,10 @@ return new class extends Migration
             $table->integer('order')->nullable();
             $table->string('image')->nullable();
             $table->string('title');
-            $table->integer('price');
+            $table->integer('price')->nullable();
             $table->string('discount')->nullable();
             $table->text('description')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }

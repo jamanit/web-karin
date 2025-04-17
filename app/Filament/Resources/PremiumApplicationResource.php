@@ -90,6 +90,14 @@ class PremiumApplicationResource extends Resource
                             'image' => null,
                         ]);
                     }),
+                Select::make('status')
+                    ->label('Status')
+                    ->nullable()
+                    ->default(true)
+                    ->options([
+                        true  => 'Publish',
+                        false => 'Inpublish',
+                    ]),
             ]);
     }
 
@@ -99,6 +107,12 @@ class PremiumApplicationResource extends Resource
             ->defaultSort('order', 'desc')
             ->reorderable('order')
             ->columns([
+                ImageColumn::make('image')
+                    ->label('Image')
+                    ->sortable()
+                    ->searchable()
+                    ->width(50)
+                    ->height(50),
                 TextColumn::make('title')
                     ->label('Title')
                     ->searchable()
@@ -122,12 +136,13 @@ class PremiumApplicationResource extends Resource
                 //     ->getStateUsing(function ($record) {
                 //         return strip_tags($record->description);
                 //     }),
-                ImageColumn::make('image')
-                    ->label('Image')
+                TextColumn::make('status')
+                    ->label('Status')
                     ->sortable()
                     ->searchable()
-                    ->width(50)
-                    ->height(50),
+                    ->badge()
+                    ->color(fn(bool $state): string => $state ? 'success' : 'gray')
+                    ->formatStateUsing(fn(bool $state): string => $state ? 'Publish' : 'Inpublish'),
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->sortable()
