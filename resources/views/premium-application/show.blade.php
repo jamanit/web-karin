@@ -124,7 +124,7 @@
                         @else
                             <div class="grid grid-cols-2 gap-[30px] md:grid-cols-2">
                                 @foreach ($premium_applications as $premium_application)
-                                    <div class="group relative overflow-hidden rounded-md shadow transition duration-500 hover:shadow-md dark:bg-slate-800 dark:shadow-gray-800">
+                                    <div class="group relative overflow-hidden rounded-md shadow transition duration-500 hover:shadow-md dark:shadow-gray-800">
                                         @if ($premium_application->discount)
                                             <div class="absolute top-2 right-0 rounded-l-lg bg-red-500 px-3 py-1 text-xs font-semibold text-white">{{ $premium_application->discount }}</div>
                                         @endif

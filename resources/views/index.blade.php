@@ -40,7 +40,7 @@
 
         <section class="relative">
             {{-- PREMIUM APPLICATION --}}
-            <div id="premium_applications" class="relative container scroll-mt-4 pt-16 pb-8 md:pt-24 md:pb-12 dark:bg-slate-900">
+            <div id="premium_applications" class="relative container scroll-mt-4 bg-gray-100 pt-16 pb-8 md:pt-24 md:pb-12 dark:bg-slate-900">
                 <div class="grid grid-cols-1 pb-8 text-center">
                     <h3 class="mb-4 text-2xl leading-normal font-medium md:text-3xl md:leading-normal">Premium Applications</h3>
                     <p class="mx-auto max-w-xl text-slate-400">Rasakan pengalaman dengan aplikasi premium yang dirancang untuk memberikan performa terbaik dan fitur eksklusif.</p>
@@ -49,9 +49,9 @@
                 @if ($premium_applications->isEmpty())
                     <p class="mx-auto max-w-xl text-center text-slate-400">Data is not yet available.</p>
                 @else
-                    <div class="grid grid-cols-2 gap-[30px] md:grid-cols-3 lg:grid-cols-4">
+                <div class="grid grid-cols-2 gap-[30px] md:grid-cols-3 lg:grid-cols-4">
                         @foreach ($premium_applications as $premium_application)
-                            <div class="group relative overflow-hidden rounded-md shadow transition duration-500 hover:shadow-md dark:bg-slate-800 dark:shadow-gray-800">
+                            <div class="group relative overflow-hidden rounded-md shadow transition duration-500 hover:shadow-md dark:shadow-gray-800">
                                 @if ($premium_application->discount)
                                     <div class="absolute top-2 right-0 rounded-l-lg bg-red-500 px-3 py-1 text-xs font-semibold text-white">{{ $premium_application->discount }}</div>
                                 @endif
